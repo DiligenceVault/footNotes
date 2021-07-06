@@ -27,7 +27,7 @@ tinymce.PluginManager.add('footnotes', function(editor) {
         }
 
         editor.windowManager.open({
-            title: "Insert a contents",
+            title: "Insert a Footnote",
             id: 'footnote-dialog',
             body: {
                 type: 'textbox',
@@ -135,7 +135,7 @@ tinymce.PluginManager.add('footnotes', function(editor) {
     }
     editor.addCommand('mceFootnotes', showDialog);
     editor.addButton("footnotes", {
-        title : 'footnote',
+        title : 'Insert Footnote',
         image : tinyMCE.baseURL + '/plugins/footnotes/img/footnotes.png',
         onclick: showDialog,
         stateSelector: 'span.fnoteWrap'
