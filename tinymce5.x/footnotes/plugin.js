@@ -69,7 +69,7 @@
         
         
         editor.windowManager.open({
-            title: 'Insert Contents',
+            title: 'Insert a Footnote',
             size: 'normal',
             body: {
                 type: 'panel',
@@ -104,7 +104,7 @@
                     fixFootnoteContent = (function () {
                         return encodeURIComponent(newfootnoteContent);
                     }()),
-                    htmlTemplate = '<span class="fnoteWrap" id="#wk_ft{FOOTNOTE_INDEX}" contenteditable="false"><button type="button" class="fnoteBtn" data-content="'+fixFootnoteContent+'">{FOOTNOTE_INDEX}</button></span>',
+                    htmlTemplate = '<span class="fnoteWrap" id="#wk_ft{FOOTNOTE_INDEX}" contenteditable="false"><sup class="fnoteBtn" title="'+newfootnoteContent+'" data-content="'+fixFootnoteContent+'">{FOOTNOTE_INDEX}</sup></span>&nbsp;',
                     totalFootNote = editor.getDoc().querySelectorAll('.fnoteBtn'),
                     totalCount = totalFootNote.length,
                     html;
@@ -216,7 +216,7 @@
     var register$1 = function (editor) {
         editor.ui.registry.addToggleButton('footnotes', {
             icon : 'fnote',
-            tooltip : 'Footnote',
+            tooltip : 'Insert a Footnote',
             onAction: function () {
 
                 return editor.execCommand('footnotes');
