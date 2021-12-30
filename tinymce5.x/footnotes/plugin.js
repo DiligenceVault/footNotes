@@ -123,8 +123,8 @@
                         return nextAll.map(v => {
                             if (Array.from(v.querySelectorAll('fnoteBtn').length) > 0) {
                                 
-                                $node.nextElementSibling.classList.contains('fnoteBtn') ?
-                                    elements =  $node.nextElementSibling.children.children :
+                                el.nextElementSibling.classList.contains('fnoteBtn') ?
+                                    elements =  el.nextElementSibling.children.children :
                                     elements =  v.querySelectorAll('.fnoteBtn');
 
                                 return elements
@@ -154,7 +154,7 @@
                     var searchFor = function(_selector, el) {
                         if (!el) {return false};
                         if(el) {
-                            return $node;
+                            return el;
                         }
                         else {
                             var found = null;
